@@ -5,7 +5,8 @@ public class RemoveDuplicateFromSortedArray {
         int [] nums={1,1,1,2,3,3,4};
         System.out.println(solution(nums));
     }
-    private static boolean solution(int[] nums) {
+
+      private static boolean solution(int[] nums) {
         if(nums==null || nums.length==0) {
             return false;
         }
@@ -17,7 +18,7 @@ public class RemoveDuplicateFromSortedArray {
             }
         }
         for(int i=0;i<cnt+1;i++) {
-            System.out.println(nums[i]+" ");
+            System.out.print(nums[i]+" ");
         }
         return false;
     }

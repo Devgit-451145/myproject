@@ -5,7 +5,22 @@ public class BestTimeToBuyAndSell {
         int [] nums={10,1,5,6,7,1};
         System.out.println(solution1(nums));
         System.out.println(solution2(nums));
+        System.out.println(solution3(nums));
     }
+
+    private static int solution3(int[] prices) {
+        int maxProfit=0;
+        for(int i=0;i<prices.length;i++) {
+            for(int j=i+1;j<prices.length;j++) {
+                int profit=prices[j]-prices[i];
+                if(profit>maxProfit) {
+                    maxProfit=profit;
+                }
+            }
+        }
+        return maxProfit;
+    }
+
     //o(n)  sc==o(1)
     private static int solution2(int[] prices) {
         int n=prices.length;
