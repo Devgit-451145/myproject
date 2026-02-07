@@ -2,7 +2,7 @@ package com.dev.practice.sevntyfive;
 
 public class AddTwoStringIntegers {
     public static void main(String[] args) {
-        System.out.println(sol("456","77"));
+        System.out.println(sol("6","7"));
     }
     //convert char to integer num.charAt(i)-'0'
     private static String sol(String n1, String n2) {
