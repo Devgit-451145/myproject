@@ -2,13 +2,14 @@ package com.dev.practice.neetcode75;
 
 public class MaxSubArraySum {
     public static void main(String[] args) {
-        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] nums = {1,2,3,7,5};
         //kadane
         System.out.println(solution(nums));
         //bruteforce
         System.out.println(solution1(nums));
     }
     private static int solution1(int[] arr) {
+        if(arr==null || arr.length<0) return 0;
         int mSum = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             int currentSum = 0;

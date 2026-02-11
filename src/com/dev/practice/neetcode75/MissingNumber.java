@@ -4,10 +4,9 @@ import java.util.Arrays;
 
 public class MissingNumber {
     public static void main(String[] args) {
-        int [] nums={0,1,2,4,5,6};
+        int [] nums={1,3,0};
         System.out.println(solution1(nums));
         System.out.println(missingNumber(nums));
-
     }
     private static int solution1(int[] n) {
         Arrays.sort(n);
@@ -18,12 +17,19 @@ public class MissingNumber {
        }
         return 0;
     }
+    //TC==O(N) SC==0(1)
     public static int missingNumber(int[] nums) {
-        int res = nums.length;
-        for (int i = 0; i < nums.length; i++) {
-            res += i - nums[i];
+        // Edge case: empty array
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
-        return res;
+        int n = nums.length;
+        int expectedSum = n * (n + 1) / 2;
+        int actualSum = 0;
+        for (int num : nums) {
+            actualSum += num;
+        }
+        return expectedSum - actualSum;
     }
 
 }
