@@ -5,7 +5,6 @@ public class RemoveDuplicateFromSortedArray {
         int [] nums={1,1,1,2,3,3,4};
         System.out.println(solution(nums));
     }
-
       private static boolean solution(int[] nums) {
         if(nums==null || nums.length==0) {
             return false;

@@ -8,19 +8,19 @@ public class ProductOfArrayExceptSelf {
         System.out.println(Arrays.toString(solution(nums)));
         System.out.println(Arrays.toString(solutionBf(nums)));
     }
+    //TC==O(N2) SC==O(1)
     private static int[] solutionBf(int[] nums) {
         int n = nums.length;
-        int[] res = new int[n];
+        int[] output = new int[n];
         for (int i = 0; i < n; i++) {
-            int prod = 1;
+            output[i] = 1;  // Initialize each element as 1 for multiplication
             for (int j = 0; j < n; j++) {
                 if (i != j) {
-                    prod *= nums[j];
+                    output[i] *= nums[j];
                 }
             }
-            res[i] = prod;
         }
-        return res;
+        return output;
     }
     private static int[] solution(int[] nums) {
         int n=nums.length;

@@ -8,7 +8,6 @@ public class ValidParanthesis {
         String s = "([{}])";
         System.out.println(solu(s));
         System.out.println(solu1(s));
-
     }
     //o(n) both
     private static boolean solu1(String s) {

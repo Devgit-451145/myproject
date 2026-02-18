@@ -20,24 +20,23 @@ public class RotateAnArray {
     }
 
     private static void sol(int[] nums, int k) {
-        k=k%nums.length;
-        if(k<0) {
-            k=k+nums.length;
-        }
-        reverse(nums,0,k-1);
-        reverse(nums,k,nums.length-1);
-        reverse(nums,0,nums.length-1);
+        int n = nums.length;
+        k = k % n; // Handle cases where k >= n
+        // Step 1: Reverse the whole array
+        reverse(nums, 0, n - 1);
+        // Step 2: Reverse the first k elements
+        reverse(nums, 0, k - 1);
+        // Step 3: Reverse the remaining elements
+        reverse(nums, k, n - 1);
     }
-
     private static void reverse(int[] nums,int start,int end) {
-        if(start<end) {
+        while(start<end) {
             int temp=nums[start];
             nums[start]=nums[end];
             nums[end]=temp;
             start++;
             end--;
         }
-
     }
     private static void solution(int[] nums, int k) {
         //0 % 5=0, 1 % 5=1,2 % 5=2,3 % 5=3, 4 % 5=4, 5%5=0, 6%5=1,7%5=2

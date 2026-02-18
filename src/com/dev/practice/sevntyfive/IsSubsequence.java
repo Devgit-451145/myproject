@@ -5,22 +5,19 @@ public class IsSubsequence {
     public static void main(String[] args) {
         System.out.println(solution("abc", "ahbgdc"));
     }
+    //O(N) and O(1)
     private static boolean solution(String s, String t) {
-        if (s.length() == 0) {
-            return true;
-        }
         int i = 0, j = 0;
+        // Iterate through both strings
         while (i < s.length() && j < t.length()) {
+            // If characters match, move the pointer for s
             if (s.charAt(i) == t.charAt(j)) {
                 i++;
-                j++;
-            } else {
-                j++;
             }
+            // Always move the pointer for t
+            j++;
         }
-        if (i == s.length()) {
-            return true;
-        }
-        return false;
+        // If i is equal to the length of s, all characters of s were found in t
+        return i == s.length();
     }
 }

@@ -1,6 +1,8 @@
 package com.dev.practice.neetcode75;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MissingNumber {
     public static void main(String[] args) {
@@ -31,5 +33,19 @@ public class MissingNumber {
         }
         return expectedSum - actualSum;
     }
-
+    //o(n)
+    public static int firstMissingPositive(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        // Add all nums into the HashSet
+        for (int num : nums) {
+            set.add(num);
+        }
+        // Check from 1 to infinite for the first missing number
+        for (int i = 1; i <= nums.length + 1; i++) {
+            if (!set.contains(i)) {
+                return i;
+            }
+        }
+        return -1; // The function should never reach here
+    }
 }

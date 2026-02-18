@@ -3,7 +3,7 @@ package dev.code.start.LinkedList;
 class ListNode {
     int val;
     ListNode next;
-    ListNode(int x) { val = x; }
+    ListNode(int val) { this.val =val; }
 }
 
 public class LinkedListRemoveDuplicate {
@@ -20,7 +20,6 @@ public class LinkedListRemoveDuplicate {
         System.out.println("List after removing duplicates:");
         printList(head);
     }
-
     public static ListNode deleteDuplicates(ListNode head) {
         if (head == null) return null;
         ListNode current = head;
@@ -34,7 +33,6 @@ public class LinkedListRemoveDuplicate {
         }
         return head;
     }
-
     // Utility function to print linked list
     public static void printList(ListNode head) {
         ListNode temp = head;

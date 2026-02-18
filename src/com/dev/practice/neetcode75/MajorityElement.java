@@ -40,10 +40,11 @@ public class MajorityElement {
     //3/2=1.5=1 lenght of array/2 will give
     private static int sol(int[] nums) {
         Map<Integer,Integer> map=new HashMap<>();
-        for(int i=0;i<nums.length;i++) {
-          map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
-          if(map.get(nums[i])>nums.length/2) {
-                    return nums[i];
+        int n = nums.length;
+        for(int num: nums) {
+          map.put(num, map.getOrDefault(nums, 0) + 1);
+          if(map.get(num)>n/2) {
+                    return num;
                 }
         }
         /*for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
