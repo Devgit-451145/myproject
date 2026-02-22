@@ -7,9 +7,8 @@ class BrowserHistory {
 
     private List<String> history;
     private int currentIndex;
-    public BrowserHistory(String homepage) {
+    public BrowserHistory() {
         history = new ArrayList<>();
-        history.add(homepage);
         currentIndex = 0;
     }
     public void visit(String url) {
@@ -36,7 +35,8 @@ class BrowserHistory {
     }
     // Example usage
     public static void main(String[] args) {
-        BrowserHistory browser = new BrowserHistory("google.com");
+        BrowserHistory browser = new BrowserHistory();
+        browser.visit("google.com");
         browser.visit("facebook.com");
         browser.visit("youtube.com");
         System.out.println(browser.move(-1)); // facebook.com

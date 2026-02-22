@@ -1,6 +1,9 @@
-package com.dev.practice.neetcode75;
+package com.dev.practice.matchingbraces;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ValidParanthesis {
     public static void main(String[] args) {
@@ -29,29 +32,6 @@ public class ValidParanthesis {
         }
         return stack.isEmpty();
     }
-    public boolean isValid(String s) {
-        // Initialize a stack to store opening brackets
-        Stack<Character> stack = new Stack<>();
-        // Loop over each character in the string
-        for (char c : s.toCharArray()) {
-            // If it's an opening bracket, push onto stack
-            if (c == '(' || c == '{' || c == '[') {
-                stack.push(c);
-            } else {
-                // If stack is empty, there's no matching opening bracket
-                if (stack.isEmpty()) return false;
-                // Pop the top element to check for matching opening bracket
-                char top = stack.pop();
-                // Check if the bracket types do not match
-                if (c == ')' && top != '(') return false;
-                if (c == '}' && top != '{') return false;
-                if (c == ']' && top != '[') return false;
-            }
-        }
-        // Return true if stack is empty, indicating all opening brackets had closing matches
-        return stack.isEmpty();
-    }
-
      //o[n2] sc=o[n]
     private static boolean solu(String s) {
         while (s.contains("()") || s.contains("{}") || s.contains("[]")) {
