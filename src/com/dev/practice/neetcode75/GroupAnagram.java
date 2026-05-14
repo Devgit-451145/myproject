@@ -7,6 +7,8 @@ public class GroupAnagram {
         String [] strs = {"act","pots","tops","cat","stop","hat"};
         System.out.println(groupAnagrams(strs));
     }
+    //Time Complexity: O(NK log K) where N is the number of strings and K is the maximum length of a string. Sorting each string takes O(K log K).
+    //Space Complexity: O(NK), the space for storing the groups of anagrams.
     public static List<List<String>> groupAnagrams(String[] strs) {
         // Map to store the list of anagrams
         Map<String, List<String>> anagramMap = new HashMap<>();

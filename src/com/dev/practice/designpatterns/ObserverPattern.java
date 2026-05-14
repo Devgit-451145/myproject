@@ -43,6 +43,6 @@ class MobileDisplay implements Observer
 }
 class WebDisplay implements Observer {
    public void update(String stockName, double price) {
-       System.out.println("Web::"+stockName+" updated to  "+price);
+        System.out.println("Web::"+stockName+" updated to  "+price);
     }
 }

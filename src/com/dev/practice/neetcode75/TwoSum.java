@@ -9,8 +9,20 @@ public class TwoSum {
        int target = 7;
        System.out.println(Arrays.toString(twoSum1(nums, target)));
        System.out.println(Arrays.toString(twoSum2(nums, target)));
+        System.out.println("Number of digits in 1234: " + countDigits(1234));
     }
-
+    static int countDigits(int number) {
+        // Base case: if number is less than 10, it's a single-digit number
+        if (number < 10) {
+            return 1;
+        } else {
+            // Recursive case: chop off one digit and count the rest
+            System.out.println(number/10);
+            int cc=1 + countDigits(number / 10);
+            System.out.println(cc);
+            return cc;
+        }
+    }
     private static int[] twoSum2(int[] nums, int target) {
         HashMap<Integer,Integer> myMap=new HashMap<>();
         for (int i=0;i<nums.length;i++) {

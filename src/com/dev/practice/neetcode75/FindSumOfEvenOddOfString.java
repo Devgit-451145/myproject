@@ -1,6 +1,6 @@
 package com.dev.practice.neetcode75;
 
-public class BalancedTree {
+public class FindSumOfEvenOddOfString {
     public static void main(String[] args) {
         System.out.println(sol("1234"));
     }
